@@ -15,3 +15,8 @@ framework:
     #fragments: true
     php_errors:
         log: true
+
+    # see https://github.com/konshensx16/symfony-todo-backend/blob/master/config/packages/framework.yaml
+    serializer:
+        circular_reference_handler: App\Services\Serializer\CircularReferenceHandler
+        enabled: true

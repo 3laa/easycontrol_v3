@@ -1,6 +1,10 @@
-controllers:
-    resource: ../../src/Controller/
+backend:
+    resource: ../../src/Controller/Backend/
     type: annotation
+    name_prefix: backend_
+    prefix: '/EasyControl'
+    options:
+        expose: true
 
 kernel:
     resource: ../../src/Kernel.php
