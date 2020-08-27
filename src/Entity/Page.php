@@ -35,9 +35,15 @@ class Page extends BaseEntity
      */
     private $pages;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Section::class, mappedBy="page")
+     */
+    private $sections;
+
     public function __construct()
     {
         $this->pages = new ArrayCollection();
+        $this->sections = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -94,6 +100,37 @@ class Page extends BaseEntity
             // set the owning side to null (unless already changed)
             if ($page->getPage() === $this) {
                 $page->setPage(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Section[]
+     */
+    public function getSections(): Collection
+    {
+        return $this->sections;
+    }
+
+    public function addSection(Section $section): self
+    {
+        if (!$this->sections->contains($section)) {
+            $this->sections[] = $section;
+            $section->setPage($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSection(Section $section): self
+    {
+        if ($this->sections->contains($section)) {
+            $this->sections->removeElement($section);
+            // set the owning side to null (unless already changed)
+            if ($section->getPage() === $this) {
+                $section->setPage(null);
             }
         }
 

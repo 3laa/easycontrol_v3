@@ -9,6 +9,7 @@ use App\Form\Backend\Website\Entity\WebsiteType;
 use App\Repository\WebsiteRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -47,6 +48,15 @@ class WebsiteController extends AbstractController
    */
   public function getWebsites() {
     return $this->json($this->websiteRepository->findAll(), Response::HTTP_OK);
+  }
+
+  /**
+   * @Route("/get-website/{website}", name="get-website")
+   * @param Website $website
+   * @return JsonResponse
+   */
+  public function getWebsite(Website $website) {
+    return $this->json($website, Response::HTTP_OK);
   }
 
   /**

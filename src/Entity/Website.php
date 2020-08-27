@@ -20,6 +20,16 @@ class Website extends BaseEntity
     private $id;
 
     /**
+     * @ORM\OneToOne(targetEntity=Page::class, cascade={"persist", "remove"})
+     */
+    private $mainMenu;
+
+    /**
+     * @ORM\OneToOne(targetEntity=Page::class, cascade={"persist", "remove"})
+     */
+    private $rootPage;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $host;
@@ -39,24 +49,28 @@ class Website extends BaseEntity
      */
     private $pages;
 
-    /**
-     * @ORM\OneToOne(targetEntity=Page::class, cascade={"persist", "remove"})
-     */
-    private $mainMenu;
+
 
     /**
-     * @ORM\OneToOne(targetEntity=Page::class, cascade={"persist", "remove"})
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $rootPage;
+    private $language;
 
     /**
-     * @ORM\Column(type="array", nullable=true)
+     * @ORM\ManyToOne(targetEntity=Theme::class, inversedBy="websites")
      */
-    private $language = [];
+    private $theme;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Block::class, mappedBy="website")
+     */
+    private $blocks;
+
 
     public function __construct()
     {
         $this->pages = new ArrayCollection();
+        $this->blocks = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -155,15 +169,59 @@ class Website extends BaseEntity
         return $this;
     }
 
-    public function getLanguage(): ?array
+    public function getLanguage(): ?string
     {
         return $this->language;
     }
 
-    public function setLanguage(?array $language): self
+    public function setLanguage(?string $language): self
     {
         $this->language = $language;
 
         return $this;
     }
+
+    public function getTheme(): ?Theme
+    {
+        return $this->theme;
+    }
+
+    public function setTheme(?Theme $theme): self
+    {
+        $this->theme = $theme;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Block[]
+     */
+    public function getBlocks(): Collection
+    {
+        return $this->blocks;
+    }
+
+    public function addBlock(Block $block): self
+    {
+        if (!$this->blocks->contains($block)) {
+            $this->blocks[] = $block;
+            $block->setWebsite($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBlock(Block $block): self
+    {
+        if ($this->blocks->contains($block)) {
+            $this->blocks->removeElement($block);
+            // set the owning side to null (unless already changed)
+            if ($block->getWebsite() === $this) {
+                $block->setWebsite(null);
+            }
+        }
+
+        return $this;
+    }
+
 }
