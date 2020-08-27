@@ -1,0 +1,977 @@
+{% extends '@backend/_theme/base.html.twig' %}
+{% block body %}
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Headings</h5>
+      <h5 class="card-title">Savings<span class="card-title-helper">30 Days</span></h5>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Savings<span class="card-title-helper">30 Days</span></h5>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Contact Info</h5>
+          <ul class="list-unstyled profile-about-list">
+            <li><i class="material-icons">mail_outline</i><span>jay.morton@gmail.com</span></li>
+            <li><i class="material-icons">home</i><span>Lives in <a href="#">San Francisco, CA</a></span></li>
+            <li><i class="material-icons">local_phone</i><span>+1 (678) 290 1680</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-6">
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Savings<span class="card-title-helper">30 Days</span></h5>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">About</h5>
+          <p>Quisque vel tellus sit amet quam efficitur sagittis. Fusce aliquam pulvinar suscipit.</p>
+          <ul class="list-unstyled profile-about-list">
+            <li><i class="material-icons">school</i><span>Studied Mechanical Engineering at <a href="#">Carnegie Mellon University</a></span></li>
+            <li><i class="material-icons">work</i><span>Former manager at <a href="#">Stacks</a></span></li>
+            <li><i class="material-icons">my_location</i><span>From <a href="#">Boston, Massachusetts</a></span></li>
+            <li><i class="material-icons">rss_feed</i><span>Followed by 716 people</span></li>
+            <li>
+              <button class="btn btn-block btn-primary m-t-lg">Follow</button>
+              <button class="btn btn-block btn-secondary m-t-lg">Message</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <div class="post">
+        <div class="post-header">
+          <img src="{{ asset('build/backend/images/avatars/profile-image.png') }}">
+          <div class="post-info">
+            <span class="post-author">Haydon Kenny</span><br>
+            <span class="post-date">7hrs</span>
+          </div>
+          <div class="post-header-actions">
+            <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+          </div>
+        </div>
+        <div class="post-body">
+          <p>Praesent purus purus, varius ac mauris quis, scelerisque ornare massa. Nam volutpat lacinia lectus, vitae mattis nisl. Mauris ultrices convallis massa, nec facilisis enim interdum ac. Suspendisse hendrerit risus nec nisi dictum efficitur. Pellentesque aliquet in justo id lobortis.</p>
+        </div>
+        <div class="post-actions">
+          <ul class="list-unstyled">
+            <li>
+              <a href="#" class="like-btn"><i class="far fa-heart"></i>Like</a>
+            </li>
+            <li>
+              <a href="#"><i class="far fa-comment"></i>Comment</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-share"></i>Share</a>
+            </li>
+          </ul>
+        </div>
+
+
+        <div class="post-comments">
+          <div class="post-comm">
+            <img src="{{ asset('build/backend/images/avatars/profile-image-2.png') }}" class="comment-img">
+            <div class="comment-container">
+                                                            <span class="comment-author">
+                                                                Riley Beach
+                                                                <small class="comment-date">1hr</small>
+                                                            </span>
+            </div>
+            <span class="comment-text">
+                                                            Fusce mattis fermentum quam non porta...
+                                                        </span>
+          </div>
+          <div class="post-comm">
+            <img src="{{ asset('build/backend/images/avatars/profile-image-2.png') }}" class="comment-img">
+            <div class="comment-container">
+                                                            <span class="comment-author">
+                                                                Riley Beach
+                                                                <small class="comment-date">1hr</small>
+                                                            </span>
+            </div>
+            <span class="comment-text">
+                                                            Fusce mattis fermentum quam non porta...
+                                                        </span>
+          </div>
+          <div class="new-comment">
+            <form action="javascript: void(0)">
+              <div class="input-group">
+                <input type="text" name="comment" class="form-control search-input" placeholder="Type something...">
+                <div class="input-group-append">
+                  <button class="btn btn-secondary" type="button" id="button-addon1">Comment</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-transparent file-list recent-files">
+    <div class="card-body">
+      <h5 class="card-title">RECENT FILES</h5>
+      <div class="row">
+        <div class="col-lg-6 col-xl-3">
+          <div class="card file photo">
+            <div class="file-options dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">View Details</a>
+                <a class="dropdown-item" href="#">Mark as Important</a>
+                <a class="dropdown-item" href="#">Move To</a>
+                <a class="dropdown-item" href="#">Copy To</a>
+                <a class="dropdown-item" href="#">Rename</a>
+                <a class="dropdown-item" href="#">Download</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Delete</a>
+              </div>
+            </div>
+            <div class="card-header file-icon">
+              <i class="material-icons">photo</i>
+            </div>
+            <div class="card-body file-info">
+              <p>IMG_08719.jpg</p>
+              <span class="file-size">657.9kb</span><br>
+              <span class="file-date">Last Accessed: 17min ago</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-xl-3">
+          <div class="card file pdf">
+            <div class="file-options dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">View Details</a>
+                <a class="dropdown-item" href="#">Mark as Important</a>
+                <a class="dropdown-item" href="#">Move To</a>
+                <a class="dropdown-item" href="#">Copy To</a>
+                <a class="dropdown-item" href="#">Rename</a>
+                <a class="dropdown-item" href="#">Download</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Delete</a>
+              </div>
+            </div>
+            <div class="card-header file-icon">
+              <i class="material-icons">description</i>
+            </div>
+            <div class="card-body file-info">
+              <p>Lease_05.pdf</p>
+              <span class="file-size">17.5kb</span><br>
+              <span class="file-date">Last Accessed: 2 hours ago</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-xl-3">
+          <div class="card file code">
+            <div class="file-options dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">View Details</a>
+                <a class="dropdown-item" href="#">Mark as Important</a>
+                <a class="dropdown-item" href="#">Move To</a>
+                <a class="dropdown-item" href="#">Copy To</a>
+                <a class="dropdown-item" href="#">Rename</a>
+                <a class="dropdown-item" href="#">Download</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Delete</a>
+              </div>
+            </div>
+            <div class="card-header file-icon">
+              <i class="material-icons">code</i>
+            </div>
+            <div class="card-body file-info">
+              <p>user_info.java</p>
+              <span class="file-size">12.7kb</span><br>
+              <span class="file-date">Last Accessed: 6 hours ago</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-xl-3">
+          <div class="card file audio">
+            <div class="file-options dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">View Details</a>
+                <a class="dropdown-item" href="#">Mark as Important</a>
+                <a class="dropdown-item" href="#">Move To</a>
+                <a class="dropdown-item" href="#">Copy To</a>
+                <a class="dropdown-item" href="#">Rename</a>
+                <a class="dropdown-item" href="#">Download</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Delete</a>
+              </div>
+            </div>
+            <div class="card-header file-icon">
+              <i class="material-icons">volume_up</i>
+            </div>
+            <div class="card-body file-info">
+              <p>music_1.mp3</p>
+              <span class="file-size">37.4mb</span><br>
+              <span class="file-date">Last Accessed: 7 hours ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-transparent file-list">
+    <div class="card-body">
+      <h5 class="card-title">FOLDERS</h5>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card folder">
+            <div class="file-options dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">View Details</a>
+                <a class="dropdown-item" href="#">Mark as Important</a>
+                <a class="dropdown-item" href="#">Move To</a>
+                <a class="dropdown-item" href="#">Copy To</a>
+                <a class="dropdown-item" href="#">Rename</a>
+                <a class="dropdown-item" href="#">Download</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Delete</a>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="folder-icon">
+                <i class="material-icons">folder_open</i>
+              </div>
+              <div class="folder-info">
+                <a href="#">Photos</a>
+                <span>87 files, 417mb</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card folder">
+            <div class="file-options dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">View Details</a>
+                <a class="dropdown-item" href="#">Mark as Important</a>
+                <a class="dropdown-item" href="#">Move To</a>
+                <a class="dropdown-item" href="#">Copy To</a>
+                <a class="dropdown-item" href="#">Rename</a>
+                <a class="dropdown-item" href="#">Download</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Delete</a>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="folder-icon">
+                <i class="material-icons">folder_open</i>
+              </div>
+              <div class="folder-info">
+                <a href="#">Music</a>
+                <span>9 files, 56mb</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-transparent file-list">
+    <div class="card-body">
+      <h5 class="card-title">FILES</h5>
+      <div class="row">
+        <div class="col-lg-6 col-xl-3">
+          <div class="card file pdf">
+            <div class="file-options dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">View Details</a>
+                <a class="dropdown-item" href="#">Mark as Important</a>
+                <a class="dropdown-item" href="#">Move To</a>
+                <a class="dropdown-item" href="#">Copy To</a>
+                <a class="dropdown-item" href="#">Rename</a>
+                <a class="dropdown-item" href="#">Download</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Delete</a>
+              </div>
+            </div>
+            <div class="card-header file-icon">
+              <i class="material-icons">description</i>
+            </div>
+            <div class="card-body file-info">
+              <p>users.txt</p>
+              <span class="file-size">14.2kb</span><br>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-xl-3">
+          <div class="card file audio">
+            <div class="file-options dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">View Details</a>
+                <a class="dropdown-item" href="#">Mark as Important</a>
+                <a class="dropdown-item" href="#">Move To</a>
+                <a class="dropdown-item" href="#">Copy To</a>
+                <a class="dropdown-item" href="#">Rename</a>
+                <a class="dropdown-item" href="#">Download</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Delete</a>
+              </div>
+            </div>
+            <div class="card-header file-icon">
+              <i class="material-icons">volume_up</i>
+            </div>
+            <div class="card-body file-info">
+              <p>group_project.mp3</p>
+              <span class="file-size">1.2mb</span><br>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-xl-3">
+          <div class="card file code">
+            <div class="file-options dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">View Details</a>
+                <a class="dropdown-item" href="#">Mark as Important</a>
+                <a class="dropdown-item" href="#">Move To</a>
+                <a class="dropdown-item" href="#">Copy To</a>
+                <a class="dropdown-item" href="#">Rename</a>
+                <a class="dropdown-item" href="#">Download</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Delete</a>
+              </div>
+            </div>
+            <div class="card-header file-icon">
+              <i class="material-icons">code</i>
+            </div>
+            <div class="card-body file-info">
+              <p>upload.php</p>
+              <span class="file-size">12.7kb</span><br>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-xl-3">
+          <div class="card file code">
+            <div class="file-options dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">View Details</a>
+                <a class="dropdown-item" href="#">Mark as Important</a>
+                <a class="dropdown-item" href="#">Move To</a>
+                <a class="dropdown-item" href="#">Copy To</a>
+                <a class="dropdown-item" href="#">Rename</a>
+                <a class="dropdown-item" href="#">Download</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Delete</a>
+              </div>
+            </div>
+            <div class="card-header file-icon">
+              <i class="material-icons">code</i>
+            </div>
+            <div class="card-body file-info">
+              <p>check_status.php</p>
+              <span class="file-size">23.8kb</span><br>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-xl-3">
+          <div class="card file photo">
+            <div class="file-options dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">View Details</a>
+                <a class="dropdown-item" href="#">Mark as Important</a>
+                <a class="dropdown-item" href="#">Move To</a>
+                <a class="dropdown-item" href="#">Copy To</a>
+                <a class="dropdown-item" href="#">Rename</a>
+                <a class="dropdown-item" href="#">Download</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Delete</a>
+              </div>
+            </div>
+            <div class="card-header file-icon">
+              <i class="material-icons">photo</i>
+            </div>
+            <div class="card-body file-info">
+              <p>friends_09.jpg</p>
+              <span class="file-size">389.2kb</span><br>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-xl-3">
+          <div class="card file photo">
+            <div class="file-options dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">View Details</a>
+                <a class="dropdown-item" href="#">Mark as Important</a>
+                <a class="dropdown-item" href="#">Move To</a>
+                <a class="dropdown-item" href="#">Copy To</a>
+                <a class="dropdown-item" href="#">Rename</a>
+                <a class="dropdown-item" href="#">Download</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Delete</a>
+              </div>
+            </div>
+            <div class="card-header file-icon">
+              <i class="material-icons">photo</i>
+            </div>
+            <div class="card-body file-info">
+              <p>friends_08.jpg</p>
+              <span class="file-size">436.6kb</span><br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Bordered Table</h5>
+      <p>Add <code>.table-bordered</code> for borders on all sides of the table and cells.</p>
+      <table class="table table-bordered table-striped ">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Fontawesome</h5>
+      <p>Get vector icons and social logos on your website with Font Awesome, the web's most popular icon set and toolkit. Visit <a href="https://fontawesome.com/icons?d=gallery&amp;m=free" target="_blank">FontAwesome's Official Website</a> for a complete list of icons.</p>
+      <div class="row icon-list-row">
+        <div class="col-sm-1">
+          <i class="fab fa-500px"></i>
+        </div>
+        <div class="col-sm-1">
+          <i class="fab fa-accessible-icon"></i>
+        </div>
+        <div class="col-sm-1">
+          <i class="fab fa-accusoft"></i>
+        </div>
+        <div class="col-sm-1">
+          <i class="fab fa-acquisitions-incorporated"></i>
+        </div>
+        <div class="col-sm-1">
+          <i class="fas fa-ad"></i>
+        </div>
+        <div class="col-sm-1">
+          <i class="fas fa-address-book"></i>
+        </div>
+        <div class="col-sm-1">
+          <i class="far fa-angry"></i>
+        </div>
+        <div class="col-sm-1">
+          <i class="fas fa-angle-double-down"></i>
+        </div>
+        <div class="col-sm-1">
+          <i class="fab fa-apple-pay"></i>
+        </div>
+        <div class="col-sm-1">
+          <i class="fas fa-at"></i>
+        </div>
+        <div class="col-sm-1">
+          <i class="fas fa-battery-half"></i>
+        </div>
+        <div class="col-sm-1">
+          <i class="fab fa-app-store-ios"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xl">
+      <div class="card">
+        <img src="{{ asset('build/backend/images/card_1.jpg') }}" class="card-img-top" alt="Placeholder">
+        <div class="card-body">
+          <h5 class="card-title">Basic Example</h5>
+          <p class="card-text">This is an example of a basic card. Cards have no fixed width to start, so they’ll naturally fill the full width of its parent element. This is easily customized with our various sizing options.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      <div class="card bg-dark text-white">
+        <img src="{{ asset('build/backend/images/card_2.jpeg') }}" class="card-img" alt="...">
+        <div class="card-img-overlay">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text">Last updated 3 mins ago</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-info">Go somewhere</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Basic</h5>
+          <p>Select2 was designed to be a replacement for the standard <code>&lt;select&gt;</code> box that is displayed by the browser. By default it supports all options and operations that are available in a standard select box, but with added flexibility.</p>
+
+          <select class="js-states form-control" >
+            <optgroup label="Alaskan/Hawaiian Time Zone">
+              <option value="AK">Alaska</option>
+              <option value="HI">Hawaii</option>
+            </optgroup>
+            <optgroup label="Pacific Time Zone">
+              <option value="CA">California</option>
+              <option value="NV">Nevada</option>
+              <option value="OR">Oregon</option>
+              <option value="WA">Washington</option>
+            </optgroup>
+            <optgroup label="Mountain Time Zone">
+              <option value="AZ">Arizona</option>
+              <option value="CO">Colorado</option>
+              <option value="ID">Idaho</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NM">New Mexico</option>
+              <option value="ND">North Dakota</option>
+              <option value="UT">Utah</option>
+              <option value="WY">Wyoming</option>
+            </optgroup>
+            <optgroup label="Central Time Zone">
+              <option value="AL">Alabama</option>
+              <option value="AR">Arkansas</option>
+              <option value="IL">Illinois</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="OK">Oklahoma</option>
+              <option value="SD">South Dakota</option>
+              <option value="TX">Texas</option>
+              <option value="TN">Tennessee</option>
+              <option value="WI">Wisconsin</option>
+            </optgroup>
+            <optgroup label="Eastern Time Zone">
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="FL">Florida</option>
+              <option value="GA">Georgia</option>
+              <option value="IN">Indiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="OH">Ohio</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WV">West Virginia</option>
+            </optgroup>
+          </select>
+
+
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">MULTIPLE SELECTION</h5>
+          <p>Select2 also supports multi-value select boxes.</p>
+
+          <select class="js-states form-control" multiple="multiple">
+            <optgroup label="Alaskan/Hawaiian Time Zone">
+              <option value="AK">Alaska</option>
+              <option value="HI">Hawaii</option>
+            </optgroup>
+            <optgroup label="Pacific Time Zone">
+              <option value="CA">California</option>
+              <option value="NV">Nevada</option>
+              <option value="OR">Oregon</option>
+              <option value="WA">Washington</option>
+            </optgroup>
+            <optgroup label="Mountain Time Zone">
+              <option value="AZ">Arizona</option>
+              <option value="CO">Colorado</option>
+              <option value="ID">Idaho</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NM">New Mexico</option>
+              <option value="ND">North Dakota</option>
+              <option value="UT">Utah</option>
+              <option value="WY">Wyoming</option>
+            </optgroup>
+            <optgroup label="Central Time Zone">
+              <option value="AL">Alabama</option>
+              <option value="AR">Arkansas</option>
+              <option value="IL">Illinois</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="OK">Oklahoma</option>
+              <option value="SD">South Dakota</option>
+              <option value="TX">Texas</option>
+              <option value="TN">Tennessee</option>
+              <option value="WI">Wisconsin</option>
+            </optgroup>
+            <optgroup label="Eastern Time Zone">
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="FL">Florida</option>
+              <option value="GA">Georgia</option>
+              <option value="IN">Indiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="OH">Ohio</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WV">West Virginia</option>
+            </optgroup>
+          </select>
+
+
+        </div>
+      </div>
+
+    </div>
+    <div class="col-xl">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Active Items</h5>
+          <p>Add <code>.active</code> to a <code>.list-group-item</code> to indicate the current active selection.</p>
+          <ul class="list-group">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item active">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Horizontal</h5>
+          <p>Add <code>.list-group-horizontal</code> to change the layout of list group items from vertical to horizontal across all breakpoints. Alternatively, choose a responsive variant <code>.list-group-horizontal-{sm|md|lg|xl}</code> to make a list group horizontal starting at that breakpoint’s <code>min-width</code>. Currently horizontal list groups cannot be combined with flush list groups.</p>
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Accordion Example</h5>
+      <p>Using the <a href="comp-card.html">card</a> component, you can extend the default collapse behavior to create an accordion. To properly achieve the accordion style, be sure to use <code>.accordion</code> as a wrapper.</p>
+      <div class="accordion" id="accordionExample">
+        <div class="card">
+          <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            Collapsible Group Item #1
+          </div>
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" style="">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header collapsed" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Collapsible Group Item #2
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample" style="">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+            Collapsible Group Item #3
+          </div>
+          <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample" style="">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xl">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Basic Example</h5>
+          <p>Here’s a quick example to demonstrate Bootstrap’s form styles. </p>
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="custom-control custom-checkbox form-group">
+              <input type="checkbox" class="custom-control-input" id="exampleCheck1">
+              <label class="custom-control-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Form Grid</h5>
+          <p>More complex forms can be built using our grid classes. Use these for form layouts that require multiple columns, varied widths, and additional alignment options.</p>
+          <form>
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="First name">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Last name">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Select</h5>
+          <p>Custom <code>&lt;select&gt;</code> menus need only a custom class, <code>.custom-select</code> to trigger the custom styles. Custom styles are limited to the <code>&lt;select&gt;</code>’s initial appearance and cannot modify the <code>&lt;option&gt;</code>s due to browser limitations.</p>
+          <select class="custom-select form-control">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Form controls</h5>
+          <p>Textual form controls—like <code>&lt;input&gt;</code>s, <code>&lt;select&gt;</code>s, and <code>&lt;textarea&gt;</code>s—are styled with the <code>.form-control</code> class. Included are styles for general appearance, focus state, sizing, and more.</p>
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Email address</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Example select</label>
+              <select class="form-control custom-select" id="exampleFormControlSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect2">Example multiple select</label>
+              <select multiple class="form-control custom-select" id="exampleFormControlSelect2">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Example textarea</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Complex Layout</h5>
+          <p>More complex layouts can also be created with the grid system.</p>
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Password</label>
+                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Address</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Address 2</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputState">State</label>
+                <select id="inputState" class="form-control custom-select">
+                  <option selected>Choose...</option>
+                  <option>...</option>
+                </select>
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input type="text" class="form-control" id="inputZip">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" type="checkbox" id="gridCheck">
+                <label class="custom-control-label" for="gridCheck">
+                  Check me out
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Checkboxes and Radios</h5>
+          <p>Checkboxes are for selecting one or several options in a list, while radios are for selecting one option from many.</p>
+          <p>Checkbox example:</p>
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="custom-control-label" for="defaultCheck1">
+              Check this box
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox" value="" id="defaultCheck2" disabled>
+            <label class="custom-control-label" for="defaultCheck2">
+              Disabled checkbox
+            </label>
+          </div>
+          <p class="m-t-sm">Radio example:</p>
+          <div class="custom-control custom-radio">
+            <input class="custom-control-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+            <label class="custom-control-label" for="exampleRadios1">
+              Radio #1
+            </label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input class="custom-control-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <label class="custom-control-label" for="exampleRadios2">
+              Radio #2
+            </label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input class="custom-control-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+            <label class="custom-control-label" for="exampleRadios3">
+              Disabled radio
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Switches</h5>
+          <p>A switch has the markup of a custom checkbox but uses the <code>.custom-switch</code> class to render a toggle switch. Switches also support the <code>disabled</code> attribute.</p>
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+            <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+          </div>
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" disabled id="customSwitch2">
+            <label class="custom-control-label" for="customSwitch2">Disabled switch element</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

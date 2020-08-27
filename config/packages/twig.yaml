@@ -2,3 +2,6 @@ twig:
     default_path: '%kernel.project_dir%/templates'
     paths:
         'easycontrol/backend/templates': 'backend'
+
+    globals:
+        backendVars: '@App\Services\Template\BackendVars'

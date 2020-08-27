@@ -1,0 +1,39 @@
+.page-sidebar {
+  width: 280px;
+  padding: 10px;
+  position: fixed;
+  background: $ec_white;
+  top: 0;
+  bottom: 0;
+  box-shadow: 0 0 1.25rem rgba($ec_color-box-shadow,.04);
+  transition: background .2s ease-in-out
+}
+
+.logo-box {
+  display: block;
+}
+
+.logo-box a.logo-text {
+  color: $ec_color-alpha;
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 22px;
+  font-family: Montserrat,sans-serif;
+  transition: all .2s ease-in-out
+}
+
+.logo-box a:hover {
+  color: $ec_color-alpha-dark
+}
+
+.page-sidebar .slimScrollDiv {
+  height: calc(100% - 55px) !important;
+}
+.page-sidebar .iframe-holder {
+  height: 100% !important;
+}
+
+.page-sidebar .iframe-holder .sidebar-iframe {
+  width: 100%;
+  height: 100%;
+}

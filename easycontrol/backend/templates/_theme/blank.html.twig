@@ -1,0 +1,10 @@
+<!DOCTYPE html >
+<html>
+{{ include('@backend/_theme/_include/head.html.twig') }}
+<body class="{% block bodyClass %}{% endblock %}">
+  {% block body %}
+
+  {% endblock %}
+{{ include('@backend/_theme/_include/foot.html.twig') }}
+</body>
+</html>

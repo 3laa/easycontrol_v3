@@ -40,6 +40,11 @@ class Page extends BaseEntity
      */
     private $sections;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $isActive;
+
     public function __construct()
     {
         $this->pages = new ArrayCollection();
@@ -133,6 +138,18 @@ class Page extends BaseEntity
                 $section->setPage(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getisActive(): ?bool
+    {
+        return $this->isActive;
+    }
+
+    public function setisActive(?bool $isActive): self
+    {
+        $this->isActive = $isActive;
 
         return $this;
     }

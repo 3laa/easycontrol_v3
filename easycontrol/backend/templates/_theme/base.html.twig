@@ -1,8 +1,21 @@
 <!DOCTYPE html >
 <html>
+{{ include('@backend/_theme/_include/head.html.twig') }}
 <body>
-{% block body %}
+<div class="easycontrol-container align-content-stretch d-flex flex-wrap">
+  {{ include('@backend/_theme/_partials/page-sidebar.html.twig') }}
+  <div class="page-container">
+    {{ include('@backend/_theme/_partials/page-header.html.twig') }}
+    <div class="page-content">
+      {{ include('@backend/_theme/_partials/page-info.html.twig') }}
+      <div class="main-wrapper">
+        {% block body %}
 
-{% endblock %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>
+{{ include('@backend/_theme/_include/foot.html.twig') }}
 </body>
 </html>

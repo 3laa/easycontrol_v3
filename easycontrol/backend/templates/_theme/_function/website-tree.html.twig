@@ -1,0 +1,69 @@
+{% if menu.pages|length > 0 %}
+  <ul class="accordion accordion-tree" id="activeWebsiteMainMenu{{ menu.id }}">
+    {% for page in menu.pages %}
+      {% set toggleIcon = ''  %}
+      {% set activeIcon = 'visibility_off'  %}
+      {% set itemIcon = 'description'  %}
+      {% set addIcon = 'description'  %}
+
+      {% if page.pages|length > 0 %}
+        {% set toggleIcon = 'arrow_right'  %}
+        {% set itemIcon = 'create_new_folder'  %}
+      {% endif %}
+
+      {% if page.isActive %}
+        {% set activeIcon = 'visibility'  %}
+      {% endif %}
+
+      <li class="accordion-item" data-id="{{ page.id }}">
+        <div class="item-head">
+
+          <div class="item-options">
+
+            <div class="item-icon item-toggle" data-toggle="collapse" data-target="#collapseWeb{{ page.id }}">
+              <span class="material-icons">{{ toggleIcon }}</span>
+            </div>
+
+            <div class="item-icon item-sort">
+              <span class="material-icons">unfold_more</span>
+            </div>
+
+            <div class="item-icon item-active -event" data-event="active">
+              <span class="material-icons">{{ activeIcon }}</span>
+            </div>
+
+            <div class="item-icon item-icon">
+              <span class="material-icons">{{ itemIcon }}</span>
+            </div>
+
+            <span class="item-id badge">{{ page.id }}</span>
+            <a href="#" class="item-title">{{ page.name }}</a>
+
+            <div class="item-icon item-settings">
+              <span class="material-icons" id="dropdownMenuButton" data-toggle="dropdown">settings</span>
+              <div class="dropdown-menu">
+                <div class="dropdown-item -event" data-event="add">
+                  <span class="material-icons">add</span> Add New
+                </div>
+                <div class="dropdown-item -event" data-event="delete">
+                  <span class="material-icons">delete</span> Delete
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+
+        </div>
+
+          <div id="collapseWeb{{ page.id }}" class="collapse" data-parent="#activeWebsiteMainMenu{{ menu.id }}">
+            <div class="item-content">
+              {{ include('@backend/_theme/_function/website-tree.html.twig', {menu: page}) }}
+            </div>
+          </div>
+
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
