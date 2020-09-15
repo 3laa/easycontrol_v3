@@ -32,6 +32,8 @@ class Page extends BaseEntity
 
     /**
      * @ORM\OneToMany(targetEntity=Page::class, mappedBy="page")
+     * @ORM\OrderBy({"sort" = "ASC"})
+     * @ORM\OrderBy({"id" = "DESC"})
      */
     private $pages;
 
@@ -44,6 +46,16 @@ class Page extends BaseEntity
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $isActive;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $sort;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $slug;
 
     public function __construct()
     {
@@ -150,6 +162,30 @@ class Page extends BaseEntity
     public function setisActive(?bool $isActive): self
     {
         $this->isActive = $isActive;
+
+        return $this;
+    }
+
+    public function getSort(): ?int
+    {
+        return $this->sort;
+    }
+
+    public function setSort(?int $sort): self
+    {
+        $this->sort = $sort;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(?string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

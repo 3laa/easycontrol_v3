@@ -1,0 +1,60 @@
+{% extends '@backend/_theme/blank.html.twig' %}
+{% block body %}
+  {% set website =  backendVars.activeWebsite.mainMenu %}
+  {% set shop =  backendVars.activeShop.mainCategory %}
+
+  <div class="sidebar">
+    <div class="sidebar-tree" data-type="website">
+      <ul class="tree-list accordion" id="sidebarTreeWebsite">
+        <li class="list-item" data-id="{{ website.id }}">
+          <div class="item-options">
+
+            <div class="item-icon icon-main">
+              <span class="material-icons">web</span>
+            </div>
+
+            <div class="item-icon icon-settings">
+              <span class="material-icons" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">settings</span>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div class="dropdown-item -action" data-action="add" data-id="{{ website.id }}">
+                  <span class="material-icons">add</span> Add
+                </div>
+              </div>
+            </div>
+
+
+
+            <a href="#" class="item-title">Website</a>
+
+          </div>
+        </li>
+      </ul>
+      {{ include('@backend/_theme/_function/website-tree.html.twig', {menu: website}) }}
+    </div>
+  </div>
+
+  {#<div class="sidebar-tree" data-type="website">
+    <ul class="accordion accordion-tree" id="activeWebsiteMainMenu">
+      <li class="accordion-item" data-id="{{ website.id }}">
+        <div class="item-head">
+          <div class="item-icon item-icon">
+            <span class="material-icons">web</span>
+          </div>
+          <div class="item-icon item-settings">
+            <span class="material-icons" id="dropdownMenuButton" data-toggle="dropdown">settings</span>
+            <div class="dropdown-menu">
+              <div class="dropdown-item -event" data-event="add">
+                <span class="material-icons">add</span> Add New
+              </div>
+            </div>
+          </div>
+          <a href="#" class="item-title"> Website </a>
+        </div>
+      </li>
+    </ul>
+
+  </div>#}
+
+
+
+{% endblock %}

@@ -1,5 +1,5 @@
 {% if menu.categories|length > 0 %}
-  <ul class="accordion accordion-tree" id="activeShopMainCategory{{ menu.id }}">
+  <ul class="accordion accordion-tree" id="activeWebsiteMainCategory{{ menu.id }}">
     {% for category in menu.categories %}
       {% set toggleIcon = ''  %}
       {% set activeIcon = 'visibility_off'  %}
@@ -11,33 +11,52 @@
         {% set itemIcon = 'create_new_folder'  %}
       {% endif %}
 
+
+      {% if category.isActive %}
+        {% set activeIcon = 'visibility'  %}
+      {% endif %}
+
       <li class="accordion-item" data-id="{{ category.id }}">
         <div class="item-head">
-
-          <div class="item-options">
-
-            <div class="item-icon item-toggle" data-toggle="collapse" data-target="#collapseShop{{ category.id }}">
-              <span class="material-icons">{{ toggleIcon }}</span>
-            </div>
-            <div class="item-icon item-sort">
-              <span class="material-icons">unfold_more</span>
-            </div>
-            <div class="item-icon item-active">
-              <span class="material-icons">{{ activeIcon }}</span>
-            </div>
-            <div class="item-icon item-icon">
-              <span class="material-icons">{{ itemIcon }}</span>
-            </div>
-
-            <span class="item-id badge">{{ category.id }}</span>
-            <a href="#" class="item-title">{{ category.name }}</a>
-
+          <div class="item-icon item-toggle" data-toggle="collapse" data-target="#collapseWeb{{ category.id }}">
+            <span class="material-icons">{{ toggleIcon }}</span>
           </div>
 
-          <div class="item-context-menu"></div>
+          <div class="item-icon item-sort">
+            <span class="material-icons">unfold_more</span>
+          </div>
+
+          <div class="item-icon item-active -event" data-event="active">
+            <span class="material-icons">{{ activeIcon }}</span>
+          </div>
+          <div class="item-icon item-icon">
+            <span class="material-icons">{{ itemIcon }}</span>
+          </div>
+          <div class="item-icon item-settings">
+            <span class="material-icons" id="dropdownMenuButton" data-toggle="dropdown">settings</span>
+            <div class="dropdown-menu">
+              <div class="dropdown-item -event" data-event="add">
+                <span class="material-icons">add</span> Add New
+              </div>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-item -event" data-event="edit">
+                <span class="material-icons">edit</span> Edit
+              </div>
+              {% if category.categories|length <= 0 %}
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-item -event" data-event="delete">
+                  <span class="material-icons">delete</span> Delete
+                </div>
+              {% endif %}
+            </div>
+          </div>
+          <span class="item-id badge">({{ category.id }})</span>
+          <a href="#" class="item-title">{{ category.name }}</a>
+
+
         </div>
 
-        <div id="collapseShop{{ category.id }}" class="collapse" data-parent="#activeShopMainCategory{{ menu.id }}">
+        <div id="collapseWeb{{ category.id }}" class="collapse show" data-parent="#activeWebsiteMainCategory{{ menu.id }}">
           <div class="item-content">
             {{ include('@backend/_theme/_function/shop-tree.html.twig', {menu: category}) }}
           </div>

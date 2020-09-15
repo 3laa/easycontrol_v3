@@ -47,11 +47,4 @@ class MainController extends AbstractController
     return $this->render('@backend/_security/login.html.twig');
   }
 
-  /**
-   * @return Response
-   * @Route("/website-sidebar", name="website-sidebar")
-   */
-  public function websiteSidebar() {
-    return $this->render('@backend/website/iframe/website-sidebar.html.twig');
-  }
 }

@@ -1,68 +1,77 @@
+{% set rootPage = backendVars.activeWebsite.rootPage %}
 {% if menu.pages|length > 0 %}
-  <ul class="accordion accordion-tree" id="activeWebsiteMainMenu{{ menu.id }}">
+  <ul class="tree-list accordion" id="sidebarTreeWebsite{{ menu.id }}">
     {% for page in menu.pages %}
-      {% set toggleIcon = ''  %}
-      {% set activeIcon = 'visibility_off'  %}
-      {% set itemIcon = 'description'  %}
-      {% set addIcon = 'description'  %}
+      {% set iconToggle = '' %}
+      {% set iconMain = 'description' %}
+      {% set iconActive = 'visibility_off' %}
 
       {% if page.pages|length > 0 %}
-        {% set toggleIcon = 'arrow_right'  %}
-        {% set itemIcon = 'create_new_folder'  %}
+        {% set iconToggle = 'add' %}
+        {% set iconMain = 'folder' %}
+      {% endif %}
+
+      {% if page == rootPage %}
+        {% set iconMain = 'home' %}
+        {% set iconActive = '' %}
       {% endif %}
 
       {% if page.isActive %}
-        {% set activeIcon = 'visibility'  %}
+        {% set iconActive = 'visibility' %}
       {% endif %}
 
-      <li class="accordion-item" data-id="{{ page.id }}">
-        <div class="item-head">
+      <li class="list-item" data-id="{{ page.id }}">
 
-          <div class="item-options">
+        <div class="item-options">
 
-            <div class="item-icon item-toggle" data-toggle="collapse" data-target="#collapseWeb{{ page.id }}">
-              <span class="material-icons">{{ toggleIcon }}</span>
-            </div>
-
-            <div class="item-icon item-sort">
-              <span class="material-icons">unfold_more</span>
-            </div>
-
-            <div class="item-icon item-active -event" data-event="active">
-              <span class="material-icons">{{ activeIcon }}</span>
-            </div>
-
-            <div class="item-icon item-icon">
-              <span class="material-icons">{{ itemIcon }}</span>
-            </div>
-
-            <span class="item-id badge">{{ page.id }}</span>
-            <a href="#" class="item-title">{{ page.name }}</a>
-
-            <div class="item-icon item-settings">
-              <span class="material-icons" id="dropdownMenuButton" data-toggle="dropdown">settings</span>
-              <div class="dropdown-menu">
-                <div class="dropdown-item -event" data-event="add">
-                  <span class="material-icons">add</span> Add New
-                </div>
-                <div class="dropdown-item -event" data-event="delete">
-                  <span class="material-icons">delete</span> Delete
-                </div>
-              </div>
-            </div>
-
+          <div class="item-icon icon-toggle">
+            <span class="material-icons" data-toggle="collapse" data-target="#collapseWeb{{ page.id }}">{{ iconToggle }}</span>
           </div>
 
+          <div class="item-icon icon-sort">
+            <span class="material-icons">unfold_more</span>
+          </div>
 
+          <div class="item-icon icon-active">
+            <span class="material-icons -action" data-action="active" data-id="{{ page.id }}">{{ iconActive }}</span>
+          </div>
+
+          <div class="item-icon icon-settings">
+            <span class="material-icons" id="dropdownMenuButton{{ page.id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">settings</span>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton{{ page.id }}">
+              <div class="dropdown-item -action" data-action="add" data-id="{{ page.id }}">
+                <span class="material-icons">add</span> Add
+              </div>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-item -action" data-action="edit" data-id="{{ page.id }}">
+                <span class="material-icons">edit</span> Edit
+              </div>
+              {% if page.pages|length <= 0 and page.sections|length <= 0  and page != rootPage %}
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-item -action" data-action="delete" data-id="{{ page.id }}">
+                  <span class="material-icons">delete</span> Delete
+                </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="item-icon icon-main">
+            <span class="material-icons">{{ iconMain }}</span>
+          </div>
+
+          <div class="item-badge">
+            ({{ page.id }})
+          </div>
+
+          <a href="#" class="item-title">{{ page.name }}</a>
 
         </div>
 
-          <div id="collapseWeb{{ page.id }}" class="collapse" data-parent="#activeWebsiteMainMenu{{ menu.id }}">
-            <div class="item-content">
-              {{ include('@backend/_theme/_function/website-tree.html.twig', {menu: page}) }}
-            </div>
-          </div>
-
+        {% if page.pages|length > 0 %}
+        <div class="item-content collapse" id="collapseWeb{{ page.id }}" data-parent="#sidebarTreeWebsite{{ menu.id }}">
+          {{ include('@backend/_theme/_function/website-tree.html.twig', {menu: page}) }}
+        </div>
+        {% endif %}
       </li>
     {% endfor %}
   </ul>
