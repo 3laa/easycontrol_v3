@@ -1,0 +1,91 @@
+.easycontrol-container {
+  min-height: 100vh;
+}
+
+.error-page .easycontrol-container {
+  height: 100vh;
+}
+.auth-page .easycontrol-container > div > .row {
+  height: 100vh;
+}
+.auth-page .easycontrol-container > div > .row > div {
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.easycontrol-container .page-container {
+  padding-left: 280px;
+  width: 100%;
+  position: relative;
+}
+
+.easycontrol-container .page-container .main-iframe {
+  width: 100%;
+  height: calc(100vh - 110px);
+}
+
+.page-content {
+  padding: 65px 25px 25px 25px;
+
+
+  & .page-title {
+    padding: 0 7px 30px;
+  }
+
+  & .page-title h3 {
+    font-weight: 900;
+    font-size: 24px;
+  }
+
+  & .page-title .page-desc {
+    line-height: 28px;
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+}
+.page-content .page-info {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 150;
+  padding: 0 25px 25px 25px;
+  background-color: $ec_color-background2;
+  overflow: hidden;
+
+  & .breadcrumb {
+    background: 0 0;
+    padding: 0 7px;
+    font-weight: 700;
+    color: #7d7d83;
+    line-height: 40px;
+    font-size: 13px;
+    margin-bottom: 0;
+    float: left;
+  }
+
+  & .breadcrumb li.active {
+    opacity: .6;
+  }
+
+  & .page-options {
+    float: right;
+  }
+
+  & .page-options .btn {
+    margin-bottom: 0;
+  }
+
+  & .page-options .btn:not(:last-child) {
+    margin-right: 10px
+  }
+}
+
+.form-fixed-btn {
+  position: fixed;
+  top: 5px;
+  right: 25px;
+  z-index: 200;
+}

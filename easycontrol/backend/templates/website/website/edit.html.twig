@@ -1,5 +1,6 @@
 {% extends '@backend/_theme/base.html.twig' %}
 {% block body %}
+  <div class="page-content">
   <div class="page-info">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
@@ -13,9 +14,10 @@
     <div class="card">
       <div class="card-body">
         {{ form_start(form) }}
-        <input type="submit" value="Save" class="btn btn-primary form-float-btn">
+        <input type="submit" value="Save" class="btn btn-primary form-fixed-btn">
         {{ form_end(form) }}
       </div>
     </div>
+  </div>
   </div>
 {% endblock %}

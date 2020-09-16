@@ -1,0 +1,112 @@
+.page-header .navbar {
+  padding: 25px
+}
+
+.page-header .navbar-collapse .navbar-nav {
+  margin-left: auto;
+  margin-right: 28px
+}
+
+.page-header .navbar ul.navbar-nav > li > a {
+  font-size: 13px;
+  margin: 0 10px 0 0;
+  color: #7d7d83;
+  line-height: 22px;
+  padding: 12px 7px;
+  font-weight: 700;
+  transition: all .2s ease-in-out
+}
+
+.page-header .navbar ul.navbar-nav > li > a > i:only-child {
+  font-size: 18px;
+  line-height: 18px;
+  vertical-align: text-top
+}
+
+.page-header .navbar ul.navbar-nav > li > a:hover {
+  color: #262633
+}
+
+.page-header .navbar ul li a.dropdown-toggle::after {
+  display: none
+}
+
+.page-header .navbar ul li a.dropdown-toggle i.dropdown-icon {
+  font-size: 18px;
+  line-height: 18px;
+  vertical-align: text-top;
+  margin-left: 5px
+}
+
+.page-header .navbar-search .form-group {
+  margin-bottom: 0
+}
+
+.page-header .navbar-search #nav-search {
+  border-radius: 20px;
+  border: 0;
+  padding: 10px 22px;
+  font-size: 13px;
+  background: #ededf1;
+  color: #7d7d83;
+  font-weight: 700;
+  display: block;
+  border: 2px solid transparent;
+  margin: 6px 0 6px;
+  transition: all .2s ease-in-out
+}
+
+.page-header .navbar-search #nav-search:focus {
+  outline: 0;
+  border-color: #5fd0a5;
+  background: $ec_white;
+  box-shadow: 0 0 1.25rem rgba(31, 45, 61, .08)
+}
+
+.page-header .navbar ul li.nav-profile > a {
+  padding: 0 7px
+}
+
+.page-header .navbar ul li.nav-profile > a img {
+  width: 42px;
+  border-radius: 42px;
+  border: 3px solid #ededf1;
+  margin-right: 14px
+}
+
+.page-header .navbar ul li.nav-profile > a span {
+  line-height: 46px
+}
+
+.page-header .navbar ul li.nav-profile .dropdown-menu {
+  margin-top: 10px;
+  width: 175px;
+  transform: scale(.9);
+  transition: all .2s ease-in-out
+}
+
+.page-header .navbar ul li.nav-profile.show .dropdown-menu {
+  transform: scale(1)
+}
+
+.page-header .navbar ul li.nav-profile .dropdown-menu:after {
+  left: 18px;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-bottom: 10px solid $ec_white;
+  top: -10px;
+  display: none !important
+}
+
+.page-header .navbar ul li a#dark-theme-toggle i {
+  font-size: 18px;
+  line-height: 18px;
+  vertical-align: text-top;
+  transition: opacity .2s ease-in-out
+}
+
+.page-header .navbar ul li a#dark-theme-toggle i.material-icons {
+  visibility: hidden;
+  opacity: 0;
+  width: 0
+}
