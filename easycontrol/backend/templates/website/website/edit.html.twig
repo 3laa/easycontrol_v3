@@ -1,14 +1,21 @@
 {% extends '@backend/_theme/base.html.twig' %}
 {% block body %}
-  <div class="card">
-    <div class="card-body">
+  <div class="page-info">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><span target="_parent">EasyControl</span></li>
+        <li class="breadcrumb-item active" aria-current="page">Edit Website</li>
+      </ol>
+    </nav>
+  </div>
 
-      <h5 class="card-title">Headings</h5>
-      <h5 class="card-title">Savings<span class="card-title-helper">30 Days</span></h5>
-
-      {{ form_start(form) }}
-      <input type="submit" value="Save">
-      {{ form_end(form) }}
+  <div class="main-wrapper">
+    <div class="card">
+      <div class="card-body">
+        {{ form_start(form) }}
+        <input type="submit" value="Save" class="btn btn-primary form-float-btn">
+        {{ form_end(form) }}
+      </div>
     </div>
   </div>
 {% endblock %}

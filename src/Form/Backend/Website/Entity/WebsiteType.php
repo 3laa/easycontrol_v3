@@ -19,6 +19,7 @@ class WebsiteType extends AbstractType
         ->add('prefix')
         ->add('locale')
         ->add('language', LanguageType::class)
+        ->add('extraLanguage', LanguageType::class, ['multiple'=>true])
       ;
   }
 

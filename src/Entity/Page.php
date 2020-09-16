@@ -57,6 +57,11 @@ class Page extends BaseEntity
      */
     private $slug;
 
+    /**
+     * @ORM\Column(type="array", nullable=true)
+     */
+    private $localization = [];
+
     public function __construct()
     {
         $this->pages = new ArrayCollection();
@@ -186,6 +191,18 @@ class Page extends BaseEntity
     public function setSlug(?string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getLocalization(): ?array
+    {
+        return $this->localization;
+    }
+
+    public function setLocalization(?array $localization): self
+    {
+        $this->localization = $localization;
 
         return $this;
     }

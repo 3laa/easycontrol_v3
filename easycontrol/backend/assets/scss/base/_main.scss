@@ -1,0 +1,16 @@
+.iframe-wrapper {
+  height: calc(100% - 110px);
+  padding: 0 25px;
+}
+
+.iframe-wrapper .main-iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.form-float-btn {
+  position: fixed;
+  top: 5px;
+  right: 0;
+  z-index: 200;
+}

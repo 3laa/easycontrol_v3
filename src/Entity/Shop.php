@@ -20,6 +20,11 @@ class Shop extends BaseEntity
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity=Website::class, inversedBy="shops")
+     */
+    private $website;
+
+    /**
      * @ORM\OneToOne(targetEntity=Category::class, cascade={"persist", "remove"})
      */
     private $mainCategory;
@@ -53,7 +58,6 @@ class Shop extends BaseEntity
      * @ORM\OneToMany(targetEntity=Category::class, mappedBy="shop")
      */
     private $categories;
-
 
 
     public function __construct()
@@ -165,6 +169,18 @@ class Shop extends BaseEntity
     public function setMainCategory(?Category $mainCategory): self
     {
         $this->mainCategory = $mainCategory;
+
+        return $this;
+    }
+
+    public function getWebsite(): ?Website
+    {
+        return $this->website;
+    }
+
+    public function setWebsite(?Website $website): self
+    {
+        $this->website = $website;
 
         return $this;
     }

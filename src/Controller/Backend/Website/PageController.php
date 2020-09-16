@@ -70,10 +70,23 @@ class PageController extends AbstractController
     return $this->json(['response' => true], Response::HTTP_OK);
   }
 
+  /**
+   * @param Request $request
+   * @param Page $page
+   * @return JsonResponse
+   * @Route("/update-name-json/{page}", name="update-name-json")
+   */
+  public function edit(Page $page, Request $request) {
+    $page->setName($request->get('name'));
+    $this->entityManager->flush();
+    return $this->json(['response' => true], Response::HTTP_OK);
+  }
+
 
   /**
    * @param Page $page
    * @Route("/delete-json/{page}", name="delete-json", methods={"DELETE"})
+   * @return JsonResponse
    */
   public function delete(Page $page) {
     $this->entityManager->remove($page);
@@ -94,18 +107,6 @@ class PageController extends AbstractController
     $page->setPage($this->pageRepository->findOneBy(['id'=>intval($request->get('parent'))]));
     $page->setName($request->get('name'));
     $this->entityManager->persist($page);
-    $this->entityManager->flush();
-    return $this->json(['response' => true], Response::HTTP_OK);
-  }
-
-  /**
-   * @param Request $request
-   * @param Page $page
-   * @return JsonResponse
-   * @Route("/update-name-json/{page}", name="update-name-json")
-   */
-  public function edit(Page $page, Request $request) {
-    $page->setName($request->get('name'));
     $this->entityManager->flush();
     return $this->json(['response' => true], Response::HTTP_OK);
   }

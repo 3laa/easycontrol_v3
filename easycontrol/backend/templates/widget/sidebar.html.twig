@@ -1,4 +1,4 @@
-{% extends '@backend/_theme/blank.html.twig' %}
+{% extends '@backend/_theme/base.html.twig' %}
 {% block body %}
   {% set website =  backendVars.activeWebsite.mainMenu %}
   {% set shop =  backendVars.activeShop.mainCategory %}
@@ -22,9 +22,7 @@
               </div>
             </div>
 
-
-
-            <a href="#" class="item-title">Website</a>
+            <a href="{{ path('backend_website_edit', {website: website.id}) }}" target="mainIframe" class="item-title">Website</a>
 
           </div>
         </li>

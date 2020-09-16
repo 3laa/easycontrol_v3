@@ -1,0 +1,12 @@
+{% extends '@backend/_theme/base.html.twig' %}
+{% block body %}
+  <div class="easycontrol-container align-content-stretch d-flex flex-wrap">
+    {{ include('@backend/_theme/_partials/page-sidebar.html.twig') }}
+    <div class="page-container">
+      {{ include('@backend/_theme/_partials/page-header.html.twig') }}
+      <div class="iframe-wrapper">
+        <iframe src="{{ path('backend_main_welcome') }}" width="100" height="100" frameborder="0" class="main-iframe" name="mainIframe" id="mainIframe"></iframe>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -11,9 +11,9 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Class IframeController
  * @package App\Controller\Backend
- * @Route("/iframe", name="iframe_")
+ * @Route("/widget", name="widget_")
  */
-class IframeController extends AbstractController
+class WidgetController extends AbstractController
 {
 
   /**
@@ -21,6 +21,6 @@ class IframeController extends AbstractController
    * @return Response
    */
   public function sidebar() {
-    return $this->render('@backend/website/iframe/sidebar.html.twig');
+    return $this->render('@backend/widget/sidebar.html.twig');
   }
 }

@@ -57,6 +57,11 @@ class Website extends BaseEntity
     private $language;
 
     /**
+     * @ORM\Column(type="array", nullable=true)
+     */
+    private $extraLanguage = [];
+
+    /**
      * @ORM\ManyToOne(targetEntity=Theme::class, inversedBy="websites")
      */
     private $theme;
@@ -66,11 +71,19 @@ class Website extends BaseEntity
      */
     private $blocks;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Shop::class, mappedBy="website")
+     */
+    private $shops;
+
+
+
 
     public function __construct()
     {
         $this->pages = new ArrayCollection();
         $this->blocks = new ArrayCollection();
+        $this->shops = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -220,6 +233,49 @@ class Website extends BaseEntity
                 $block->setWebsite(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Shop[]
+     */
+    public function getShops(): Collection
+    {
+        return $this->shops;
+    }
+
+    public function addShop(Shop $shop): self
+    {
+        if (!$this->shops->contains($shop)) {
+            $this->shops[] = $shop;
+            $shop->setWebsite($this);
+        }
+
+        return $this;
+    }
+
+    public function removeShop(Shop $shop): self
+    {
+        if ($this->shops->contains($shop)) {
+            $this->shops->removeElement($shop);
+            // set the owning side to null (unless already changed)
+            if ($shop->getWebsite() === $this) {
+                $shop->setWebsite(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getExtraLanguage(): ?array
+    {
+        return $this->extraLanguage;
+    }
+
+    public function setExtraLanguage(?array $extraLanguage): self
+    {
+        $this->extraLanguage = $extraLanguage;
 
         return $this;
     }
